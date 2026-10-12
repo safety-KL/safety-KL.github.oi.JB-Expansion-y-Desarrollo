@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JB Expansión y Desarrollo | Servicios</title>
+    <link rel="icon" type="image/png" href="../imagenes/JBlogoPNG.png">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="../imagenes/JBlogoPNG.png" alt="JB Expansión y Desarrollo" class="logo-img">
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="proyectos.html">Proyectos</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <section style="padding-top: 160px;">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+
+            <div class="services-grid">
+
+                <div class="card">
+                    <h3>Diseño Arquitectónico</h3>
+                    <div class="card-info">
+                        <img src="../imagenes/Diseño Arquitectónico.jpg" alt="Diseño Arquitectónico">
+                        <div class="card-text">
+                            <h4>Diseño Arquitectonico</h4>
+                            <p>Dibujo de planos arquitectónicos para construcción, trámites de permisos y proyección de proyectos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Construcción</h3>
+                    <div class="card-info">
+                        <img src="../imagenes/Construcción.jpeg" alt="Construcción">
+                        <div class="card-text">
+                            <h4>Construcción</h4>
+                            <p>Construcción de obras civil, arquitectónicas y especialidades.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Supervisión</h3>
+                    <div class="card-info">
+                        <img src="../imagenes/Supervisión.jpg" alt="Supervisión">
+                        <div class="card-text">
+                            <h4>Supervisión</h4>
+                            <p>Supervisión y acompañamiento profesional en proyectos de construcción.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Consultoría</h3>
+                    <div class="card-info">
+                        <img src="../imagenes/Consultoría.jpg" alt="Consultoría">
+                        <div class="card-text">
+                            <h4>Consultoría</h4>
+                            <p>Asesoría en tramitología de permisos, construcción y diseño.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Diseño Gráfico</h3>
+                    <div class="card-info">
+                        <img src="../imagenes/Diseño Grafico.jpg" alt="Diseño Gráfico">
+                        <div class="card-text">
+                            <h4>Diseño Gráfico</h4>
+                            <p>Soluciónes digitales creativas basadas en diseño gráfico y marketing especializado.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Telecomunicaciónes</h3>
+                    <div class="card-info">
+                        <img src="../imagenes/Telecomunicaciónes.jpg" alt="Telecomunicaciónes">
+                        <div class="card-text">
+                            <h4>Telecomunicaciónes</h4>
+                            <p>Soluciónes en comunicación aplicadas a la construcción de obras civiles y arquitectónicas.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 JB Expansión y Desarrollo • San Salvador, El Salvador</p>
+    </footer>
+
+    <script>
+        const tarjetas = document.querySelectorAll('.services-grid .card');
+
+        const observador = new IntersectionObserver((entradas) => {
+            entradas.forEach(entrada => {
+                if (entrada.isIntersecting) {
+                    entrada.target.classList.add('visible');
+                    observador.unobserve(entrada.target);
+                }
+            });
+        }, { threshold: 0.05 });
+
+        tarjetas.forEach(tarjeta => observador.observe(tarjeta));
+
+        tarjetas.forEach(tarjeta => {
+            tarjeta.addEventListener('click', () => {
+                const estabaActiva = tarjeta.classList.contains('active');
+
+                tarjetas.forEach(otraTarjeta => {
+                    otraTarjeta.classList.remove('active');
+                });
+
+                if (!estabaActiva) {
+                    tarjeta.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

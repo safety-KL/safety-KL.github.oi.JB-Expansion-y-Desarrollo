@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JB Expansión y Desarrollo | Nuestros Proyectos</title>
+    <link rel="icon" type="image/png" href="../imagenes/JBlogoPNG.png">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="../imagenes/JBlogoPNG.png" alt="JB Expansión y Desarrollo" class="logo-img">
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="proyectos.html">Proyectos</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <section style="padding-top: 160px;">
+        <div class="container">
+            <h2>Proyectos Destacados</h2>
+            <div class="projects-grid">
+
+                <div class="card project-card">
+                    <div class="project-slideshow" aria-label="Galería de imágenes: Canalización de aguas lluvias en Acajutla">
+                        <img src="../imagenes/ImgProyAcaj4.jpg" alt="Canalización de aguas lluvias en Acajutla - imagen 1" class="slide slide-1">
+                        <img src="../imagenes/ImgProyAcaj3.jpg" alt="Canalización de aguas lluvias en Acajutla - imagen 2" class="slide slide-2">
+                        <img src="../imagenes/ImgProyAcaj2.png" alt="Canalización de aguas lluvias en Acajutla - imagen 3" class="slide slide-3">
+                    </div>
+                    <div class="project-overlay">
+                        <h4>Canalización de Aguas LLuvias</h4>
+                        <h3>ACAJUTLA</h3>
+                        <p>Readecuación canalizada de aguas lluvias por medio de 300 metros de tubería y cajas de detección.</p>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-slideshow" aria-label="Galería de imágenes: Remodelaciones de oficinas MARN">
+                        <img src="../imagenes/Casa1.jpeg" alt="Remodelaciones de oficinas MARN - imagen 1" class="slide slide-1">
+                        <img src="../imagenes/Casa2.jpeg" alt="Remodelaciones de oficinas MARN - imagen 2" class="slide slide-2">
+                        <img src="../imagenes/Casa3.jpeg" alt="Remodelaciones de oficinas MARN - imagen 3" class="slide slide-3">
+                    </div>
+                    <div class="project-overlay">
+                        <h4>Remodelaciones de</h4>
+                        <h3>VIVIENDAS UNIFAMILIARES</h3>
+                        <p>Remodelación de areas de oficinas por medio de divisiónes livianas nuevas en el Edificio 1 del MARN.</p>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="project-slideshow" aria-label="Galería de imágenes: Proyecto LC Modelo">
+                        <img src="../imagenes/LCMOD1.jpg" alt="Proyecto LC Modelo - imagen 1" class="slide slide-1">
+                        <img src="../imagenes/LCMOD2.jpg" alt="Proyecto LC Modelo - imagen 2" class="slide slide-2">
+                        <img src="../imagenes/LCMOD3.jpg" alt="Proyecto LC Modelo - imagen 3" class="slide slide-3">
+                    </div>
+                    <div class="project-overlay">
+                        <h4>Reparación de Batería Sanitaria</h4>
+                        <h3>LC MODELO</h3> 
+                        <p>Reparación de la infraestructura hidráulica y de acabados de la batería sanitaria existente del Liceo Cristiano Modelo.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 JB Expansión y Desarrollo • San Salvador, El Salvador</p>
+    </footer>
+
+    <script>
+        const tarjetas = document.querySelectorAll('.card');
+        const observador = new IntersectionObserver((entradas) => {
+            entradas.forEach(entrada => {
+                if (entrada.isIntersecting) {
+                    entrada.target.classList.add('visible');
+                    observador.unobserve(entrada.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        tarjetas.forEach(tarjeta => observador.observe(tarjeta));
+    </script>
+</body>
+</html>
